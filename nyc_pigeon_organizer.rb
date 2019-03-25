@@ -1,17 +1,18 @@
+
 def nyc_pigeon_organizer (hash)
-  new_hash = {}
+  pigeon_list = {}
   hash.each do |list, data|
     data.each do |option, birds|
       birds.each do |name|
-        if new_hash[name] == nil
-          new_hash[name] = {}
+        if pigeon_list[name] == nil
+          pigeon_list[name] = {}
         end
-        if new_hash[name][list] == nil
-          new_hash[name][list] = []
+        if pigeon_list[name][list] == nil
+          pigeon_list[name][list] = []
         end
-        new_hash[name][list] << option.to_s
+        pigeon_list[name][list] << option.to_s
       end
     end
   end
-  new_hash
+  pigeon_list
 end

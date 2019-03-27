@@ -20,10 +20,12 @@ def nyc_pigeon_organizer(data)
     pigeon_list[pigeon] = {:color => [], :gender => [], :lives => []}
   end
 
-#I don't understand why this wouldn't work...it would make the code more abstract
-#pigeons.each do |pigeon|
-#  pigeon_list[pigeon] = characteristics.each {|char| {char => []}}
-#end
+=begin
+I don't understand why this wouldn't work, instead of the block above...it would make the code more abstract
+pigeons.each do |pigeon|
+  pigeon_list[pigeon] = characteristics.each {|char| {char => []}}
+end
+=end
 
 data.each do |characteristic, data|
   data.each do |char, birds|

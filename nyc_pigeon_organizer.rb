@@ -28,26 +28,12 @@ def nyc_pigeon_organizer(data)
 #  pigeon_list[pigeon] = characteristics.each {|char| {char => []}}
 #end
 
-data[:color].each do |color, birds|
-  pigeon_list.keys.each do |pigeon|
-    if birds.include?(pigeon)
-      pigeon_list[pigeon][:color] << color.to_s
-    end
-  end
-end
-
-data[:gender].each do |gender, birds|
-  pigeon_list.keys.each do |pigeon|
-    if birds.include?(pigeon)
-      pigeon_list[pigeon][:gender] << gender.to_s
-    end
-  end
-end
-
-data[:lives].each do |lives, birds|
-  pigeon_list.keys.each do |pigeon|
-    if birds.include?(pigeon)
-      pigeon_list[pigeon][:lives] << lives.to_s
+data.each do |characteristic, data|
+  data.each do |char, birds|
+    pigeon_list.keys.each do |pigeon|
+      if birds.include?(pigeon)
+        pigeon_list[pigeon][characteristic] << char.to_s
+      end
     end
   end
 end

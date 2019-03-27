@@ -5,13 +5,10 @@ def nyc_pigeon_organizer(data)
   #Create empty array for list of pigeons
   pigeons = []
 
-  #Get all names of pigeons
+  #Get all unique names of pigeons
   data[:color].each do |color, birds|
-    birds.each {|pigeon| pigeons << pigeon}
+    birds.each {|pigeon| if pigeons.include?(pigeon) == false then pigeons << pigeon end}
   end
-
-  #Remove duplicates from pigeon list.
-  pigeons.uniq
 
   #Create empty hash for pigeon_list
   pigeon_list = {}

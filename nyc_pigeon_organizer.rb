@@ -27,6 +27,7 @@ pigeons.each do |pigeon|
 end
 =end
 
+#Populate new hash pigeon_list with each bird characteristics
 data.each do |characteristic, data|
   data.each do |char, birds|
     pigeon_list.keys.each do |pigeon|
@@ -37,6 +38,7 @@ data.each do |characteristic, data|
   end
 end
 
+#Call new hash
 pigeon_list
 
 end
